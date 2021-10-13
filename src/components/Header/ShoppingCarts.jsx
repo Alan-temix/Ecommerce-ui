@@ -1,8 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useContext } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline'
-
+// Context
+import CartContext from '../../context/CartContext';
 const products = [
   {
     id: 1,
@@ -26,7 +27,7 @@ const products = [
       'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
   },
   {
-    id: 2,
+    id: 3,
     name: 'Medium Stuff Satchel',
     href: '#',
     color: 'Blue',
@@ -37,7 +38,7 @@ const products = [
       'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
   },
   {
-    id: 2,
+    id: 4,
     name: 'Medium Stuff Satchel',
     href: '#',
     color: 'Blue',
@@ -48,7 +49,7 @@ const products = [
       'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
   },
   {
-    id: 2,
+    id: 5,
     name: 'Medium Stuff Satchel',
     href: '#',
     color: 'Blue',
@@ -63,9 +64,10 @@ const products = [
 
 export default function ShoppingCarts() {
   const [open, setOpen] = useState(true)
+  const { changeOpenClose, openCart } = useContext(CartContext);
 
   return (
-    <Transition.Root show={open} as={Fragment}>
+    <Transition.Root show={openCart} as={Fragment}>
       <Dialog as="div" className="fixed inset-0 overflow-hidden" onClose={setOpen}>
         <div className="absolute inset-0 overflow-hidden">
           <Transition.Child
@@ -99,7 +101,7 @@ export default function ShoppingCarts() {
                         <button
                           type="button"
                           className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                          onClick={() => setOpen(false)}
+                          onClick={changeOpenClose}
                         >
                           <span className="sr-only">Close panel</span>
                           <XIcon className="h-6 w-6" aria-hidden="true" />
@@ -167,7 +169,7 @@ export default function ShoppingCarts() {
                         <button
                           type="button"
                           className="text-indigo-600 font-medium hover:text-indigo-500"
-                          onClick={() => setOpen(false)}
+                          onClick={changeOpenClose}
                         >
                           Continue Shopping<span aria-hidden="true"> &rarr;</span>
                         </button>

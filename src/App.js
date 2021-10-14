@@ -1,6 +1,7 @@
 import { BrowserRouter,Switch, Route } from 'react-router-dom';
 import './App.css';
 import { CartProvider } from './context/CartContext';
+import { ProductProvider } from './context/ProductContext';
 import Main from './layouts/Main';
 import Home from './views/Home';
 import ProductDetails from './views/ProductDetails';
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <ProductProvider>
         <CartProvider>
           <Main>
             <Switch>
@@ -36,6 +38,7 @@ function App() {
             </Switch>
           </Main>
         </CartProvider>
+      </ProductProvider>
       </BrowserRouter>
     </div>
   );

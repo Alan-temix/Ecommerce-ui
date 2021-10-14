@@ -27,7 +27,7 @@ function classNames(...classes) {
 }
 
 export default function Header() {
-  const { changeOpenClose } = useContext(CartContext);
+  const { state, dispatch } = useContext(CartContext);
 
   const [open, setOpen] = useState(false);
 
@@ -175,7 +175,7 @@ export default function Header() {
                 </div>
 
                 {/* Cart */}
-                <div className="ml-4 flow-root lg:ml-6" onClick={changeOpenClose}>
+                <div className="ml-4 flow-root lg:ml-6" onClick={() => dispatch({type: "Show Menu"})}>
                   <a href="#" className="group -m-2 p-2 flex items-center">
                     <ShoppingBagIcon
                       className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"

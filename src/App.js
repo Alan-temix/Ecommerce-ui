@@ -23,7 +23,7 @@ function App() {
               <Route path="/Login" exact>
                 <p>Solo muestra esto en pantalla</p>
               </Route>
-              <Route path="/Product" exact>
+              <Route path="/Product/:productId" exact>
                 <ProductDetails />
               </Route>
               <Route path="/Checkout" exact>

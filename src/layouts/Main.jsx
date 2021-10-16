@@ -8,7 +8,6 @@ const Main = ({ children }) => {
     return(
         <>
         <Header />
-        {/* <ShoppingCart /> */}
         {children}
         <Footer />
         </>

@@ -1,5 +1,9 @@
+import CheckoutForm from '../components/CheckoutForm/CheckoutForm';
+
 const Checkout = () => {
-    return("Este es el checkout");
+    return(
+        <CheckoutForm />
+    );
 }
 
 export default Checkout;

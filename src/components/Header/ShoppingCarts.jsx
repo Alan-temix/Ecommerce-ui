@@ -1,5 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useState, useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { Dialog, Transition } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline'
 
@@ -87,12 +88,13 @@ export default function ShoppingCarts() {
                     </div>
                     <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                     <div className="mt-6">
-                      <a
-                        href="#"
+                      <Link
+                        to="/Checkout"
                         className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                        onClick={() => dispatch({type: "Hide Menu"})}
                       >
                         Checkout
-                      </a>
+                      </Link>
                     </div>
                     <div className="mt-6 flex justify-center text-sm text-center text-gray-500">
                       <p>

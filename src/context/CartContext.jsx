@@ -4,15 +4,15 @@ const CartContext = createContext();
 
 const products = [
     {
-      id: 1,
+      id: 22,
       name: 'Medium Stuff Satchel',
       href: '#',
       color: 'Blue',
-      price: '32.00',
-      quantity: 1,
+      price: 32.00,
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
       imageAlt:
         'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+      quantity: 1,
       stock: 1
     }
     // More products...
@@ -20,6 +20,7 @@ const products = [
 
 const initialState = {
     statusVisible: false,
+    totalPrice: 0,
     cart: [...products]
 };
 
@@ -28,7 +29,7 @@ const reducer = (state, action) => {
         case "Show Menu":
             return {
                 ...state,
-                statusVisible: true
+                statusVisible: true,
             };
 
         case "Hide Menu":
@@ -38,18 +39,18 @@ const reducer = (state, action) => {
             };
 
         case "Add":
-            console.log(action.payload.id);
+            console.log(action.payload.id)
             return {
                 ...state,
-                cart: [...state.cart, {...action.payload}]
+                // cart: [...state.cart, {...action.payload}],
+                cart: [...state.cart, state.cart.find(item => item.id === action.payload.id ? {...item, quantity:item.quantity + 1} : action.payload )]
             }
 
         case "Remove":
             const newArr = state.cart.filter(element => element.id != action.payload.id);
-
             return {
                 ...state,
-                cart: [...newArr]
+                cart: [...newArr],
             }
 
         default:

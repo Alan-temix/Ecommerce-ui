@@ -14,6 +14,7 @@
   }
 */
 import { Fragment, useState, useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { Dialog, Transition } from '@headlessui/react'
 import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline'
 import ShoppingCarts from './ShoppingCarts';
@@ -38,7 +39,7 @@ export default function Header() {
   
   return (
     <>
-    <div className="bg-white">
+    <div className="bg-white border-b-2">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" onClose={setOpen}>
@@ -132,14 +133,14 @@ export default function Header() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="/">
+                <Link to="/">
                   <span className="sr-only">Workflow</span>
                   <img
                     className="h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
 
               {/* Flyout menus */}

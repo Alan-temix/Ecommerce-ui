@@ -15,8 +15,8 @@ const products = [
       quantity: 1,
       stock: 1
     }
-    // More products...
-]  
+    //More products...
+]
 
 const initialState = {
     statusVisible: false,
@@ -29,7 +29,10 @@ const reducer = (state, action) => {
         case "Show Menu":
             return {
                 ...state,
-                statusVisible: true,
+                statusVisible: true
+                // totalPrice: state.cart.map(element => element.price).reduce((acc, item) => {
+                //     return acc += item;
+                // }, 0)
             };
 
         case "Hide Menu":
@@ -39,18 +42,22 @@ const reducer = (state, action) => {
             };
 
         case "Add":
-            console.log(action.payload.id)
+            console.log(state)
             return {
                 ...state,
-                // cart: [...state.cart, {...action.payload}],
-                cart: [...state.cart, state.cart.find(item => item.id === action.payload.id ? {...item, quantity:item.quantity + 1} : action.payload )]
+                // cart: [...state.cart, state.cart.some(element => element.id === action.payload.id) ? {...action.payload, quantity: action.payload.id + 1} : {...action.payload}]
+                cart: [...state.cart, {...action.payload}]
+                // cart: test.map(element => element.id === action.payload.id ? ({...element, quantity: action.payload.quantity + 1}) : {...action.payload})
             }
 
         case "Remove":
             const newArr = state.cart.filter(element => element.id != action.payload.id);
             return {
                 ...state,
-                cart: [...newArr],
+                totalPrice: state.cart.reduce((acc, item) => {
+                    return acc -= item.price;
+                }, 0),
+                cart: [...newArr]
             }
 
         default:

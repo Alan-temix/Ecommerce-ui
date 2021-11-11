@@ -19,7 +19,6 @@ const ProductDetails = () => {
     return(
         <>
             {stateProductSelected != null && <Details props={stateProductSelected} />}
-            {/* {stateProductSelected != null && <Details id={stateProductSelected[0].id} name={stateProductSelected[0].name} href={stateProductSelected[0].href} price={stateProductSelected[0].price} imageSrc={stateProductSelected[0].imageSrc} imageAlt={stateProductSelected[0].imageAlt} quantity={stateProductSelected[0].quantity} stock={stateProductSelected[0].stock} />} */}
         </>
     )
 }

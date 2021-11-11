@@ -32,7 +32,8 @@ function App() {
               <Route path="/Checkout/PaymentConfirmation" exact>
                 <PaymentConfirmation />
               </Route>
-              <Route path="*" exact>
+              {/* <Route path="*" exact> */}
+              <Route path="*">
                 <NotFound />
               </Route>
             </Switch>

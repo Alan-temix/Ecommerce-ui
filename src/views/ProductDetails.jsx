@@ -14,7 +14,7 @@ const ProductDetails = () => {
             setStateProductSelected(productSelected[0]);
         }
         getProduct();
-    }, [])
+    }, [productId, state.products])
 
     return(
         <>

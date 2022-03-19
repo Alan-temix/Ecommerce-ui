@@ -74,7 +74,7 @@ export default function ShoppingCarts() {
 
                     <div className="mt-8">
                       <div className="flow-root">
-                        <ul role="list" className="-my-6 divide-y divide-gray-200">
+                        <ul className="-my-6 divide-y divide-gray-200">
                           {state.cart.length > 0 ? (state.cart.map((product) => ( <ShoppingCartList key={product.id} id={product.id} imageSrc={product.imageSrc} imageAlt={product.imageAlt} href={product.href} name={product.name} price={product.price} color={product.color} quantity={product.quantity} /> ))) : (<div className="p-2 bg-red-500 bg-opacity-25 rounded"><p className="text-lg">Empty Cart</p><p className="italic">Click on "Add to Cart" to add the product you want to your cart.</p></div>)}
                         </ul>
                       </div>

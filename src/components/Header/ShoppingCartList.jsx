@@ -25,7 +25,9 @@ const ShoppingCartList = (props) => {
             <p className="mt-1 text-sm text-gray-500">{color}</p>
           </div>
           <div className="flex-1 flex items-end justify-between text-sm">
-            <p className="text-gray-500">Quantity: {quantity}</p>
+            <p className="text-gray-500">
+              Quantity: <span style={{marginLeft:'10px', border: '1px solid black'}}><button style={{padding: '10px', color: "blue"}}>-</button> {quantity} <button style={{padding: '10px', color: "blue"}}>+</button></span>
+            </p>
             <div className="flex">
               <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500" onClick={() => dispatch({type: "Remove", payload: props})}>
                 Remove

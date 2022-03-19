@@ -1,4 +1,4 @@
-import React, { useState, createContext, useReducer } from 'react';
+import React, {createContext, useReducer } from 'react';
 
 const CartContext = createContext();
 
@@ -51,7 +51,7 @@ const reducer = (state, action) => {
             }
 
         case "Remove":
-            const newArr = state.cart.filter(element => element.id != action.payload.id);
+            const newArr = state.cart.filter(element => element.id !== action.payload.id);
             return {
                 ...state,
                 totalPrice: state.cart.reduce((acc, item) => {
@@ -62,7 +62,6 @@ const reducer = (state, action) => {
 
         default:
             return state;
-            break;
     }
 }
 

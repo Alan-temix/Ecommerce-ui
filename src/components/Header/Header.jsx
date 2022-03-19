@@ -1,22 +1,8 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-*/
 import { Fragment, useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { Dialog, Transition } from '@headlessui/react'
 import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline'
+import './Header.style.css';
 import ShoppingCarts from './ShoppingCarts';
 import { getIp } from './Helpers/getIp';
 
@@ -25,7 +11,7 @@ import CartContext from '../../context/CartContext';
 
 export default function Header() {
   const { state, dispatch } = useContext(CartContext);
-
+  const [displayInputValue, setDisplayInputValue] = useState("hidden");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -112,7 +98,7 @@ export default function Header() {
 
       <header className="relative bg-white">
         <p className="bg-indigo-600 h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
-          Get free delivery on orders over $100
+          <span id="thisSelector">Get free delivery on orders over $100</span>
         </p>
 
         <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,7 +138,6 @@ export default function Header() {
                 </div> */}
 
                 <div className="hidden lg:ml-8 lg:flex">
-                  <a href="#" className="text-gray-700 hover:text-gray-800 flex items-center">
                     <img
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       alt=""
@@ -160,27 +145,33 @@ export default function Header() {
                     />
                     <span className="ml-3 block text-sm font-medium">CAD</span>
                     <span className="sr-only">$, change currency</span>
-                  </a>
                 </div>
 
                 {/* Search */}
-                <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
+                <div className="flex lg:ml-2">
+                  <span className="p-1 text-gray-400 hover:text-gray-500 cursor-pointer" onClick={() => displayInputValue === "hidden" ? setDisplayInputValue("inline") : setDisplayInputValue("hidden")}>
                     <span className="sr-only">Search</span>
                     <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                  </a>
+                  </span>
+                  <form className={displayInputValue}>
+                    {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline cursor-pointer mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={() => displayInputValue === "inline" ? setDisplayInputValue("hidden") : setDisplayInputValue("inline")}>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg> */}
+                    <input type="text" placeholder="Search by name or category" name="search-keyword" />
+                    <button className="ml-4">Search</button>
+                  </form>
                 </div>
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6" onClick={() => dispatch({type: "Show Menu"})}>
-                  <a href="#" className="group -m-2 p-2 flex items-center">
+                  <span className="group -m-2 p-2 flex items-center ut-hover-pointer">
                     <ShoppingBagIcon
                       className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{state.cart.length}</span>
                     <span className="sr-only">items in cart, view bag</span>
-                  </a>
+                  </span>
                 </div>
               </div>
             </div>

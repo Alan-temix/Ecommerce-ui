@@ -28,7 +28,7 @@ return (
             </div>
           </Link>
           <div className="flex justify-between">
-            <h3 className="mt-2 text-sm text-gray-700">Stock: </h3>
+            <h3 className="mt-2 text-sm text-gray-700">Stock </h3>
             <span className="mt-1 text-lg font-medium text-gray-900">{product.stock}</span>
           </div>
           <div className="flex justify-between">

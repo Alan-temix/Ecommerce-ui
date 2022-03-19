@@ -4,12 +4,12 @@ const CartContext = createContext();
 
 const products = [
     {
-      id: 22,
-      name: 'Medium Stuff Satchel',
-      href: '#',
+      id: 1,
+      name: 'SST AEC SUPEREARTH SW',
+      href: '',
       color: 'Blue',
       price: 32.00,
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
+      imageSrc: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/bea13ab65d384ae2b614ad3300f493d0_9366/SST_AEC_SUPEREARTH_SW_Negro_GX3823_01_standard.jpg',
       imageAlt:
         'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
       quantity: 1,

@@ -11,7 +11,7 @@ const Details = ({props}) => {
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             <img alt={imageAlt} className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src={imageSrc} />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-              <h2 className="text-sm title-font text-gray-500 tracking-widest">Camera</h2>
+              <h2 className="text-sm title-font text-gray-500 tracking-widest">Tennis</h2>
               <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{name}</h1>
               <div className="flex mb-4">
                 <span className="flex items-center">
@@ -50,7 +50,9 @@ const Details = ({props}) => {
                   </span>
                 </span>
               </div>
-              <p className="leading-relaxed">Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo juiceramps cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean shorts keytar banjo tattooed umami cardigan.</p>
+              <p className="leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
                 <div className="flex">
                   <span className="mr-3">Color</span>

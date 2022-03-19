@@ -119,7 +119,7 @@ export default function Header() {
                   <span className="sr-only">Workflow</span>
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                    src="https://i.pinimg.com/favicons/03134c8bc7d17e7bbf7f86642497d7107626ded1b2e4c6b79da09c3a.png?b6edda3ba4294f7ee22309a18ab5a722"
                     alt=""
                   />
                 </Link>
@@ -164,7 +164,7 @@ export default function Header() {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6" onClick={() => dispatch({type: "Show Menu"})}>
-                  <span className="group -m-2 p-2 flex items-center ut-hover-pointer">
+                  <span className="group -m-2 p-2 flex items-center cursor-pointer">
                     <ShoppingBagIcon
                       className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"

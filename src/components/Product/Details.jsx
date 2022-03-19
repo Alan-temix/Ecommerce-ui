@@ -3,8 +3,8 @@ import CartContext from '../../context/CartContext';
 
 const Details = ({props}) => {
   const { dispatch } = useContext(CartContext);
-  const {id, name, href, price, imageSrc, imageAlt, quantity, stock} = props;
-  console.log(props)
+  // const {id, name, href, price, imageSrc, imageAlt, quantity, stock} = props;
+  const { name, price, imageSrc, imageAlt } = props;
     return(
       <section className="text-gray-700 body-font overflow-hidden bg-white">
         <div className="container px-5 py-20 mx-auto">

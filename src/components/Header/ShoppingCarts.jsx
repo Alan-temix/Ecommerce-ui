@@ -11,7 +11,7 @@ import CartContext from '../../context/CartContext';
 
 export default function ShoppingCarts() {
   const [subtotal, setSubtotal] = useState(0);
-  const [open, setOpen] = useState(true)
+  // const [open, setOpen] = useState(true)
   const { state, dispatch } = useContext(CartContext);
 
   useEffect(() => {
@@ -31,7 +31,8 @@ export default function ShoppingCarts() {
 
   return (
     <Transition.Root show={state.statusVisible} as={Fragment}>
-      <Dialog as="div" className="fixed inset-0 overflow-hidden" onClose={setOpen}>
+      {/* <Dialog as="div" className="fixed inset-0 overflow-hidden" onClose={setOpen}> */}
+      <Dialog as="div" className="fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <Transition.Child
             as={Fragment}

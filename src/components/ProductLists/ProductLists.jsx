@@ -5,8 +5,8 @@ import CartContext from '../../context/CartContext';
 
 export default function ProductLists() {
   const { state : globalStateProduct } = useContext(ProductContext);
-  const { state : globalStateCart, dispatch} = useContext(CartContext);
-
+  // const { state : globalStateCart, dispatch} = useContext(CartContext);
+  const { dispatch} = useContext(CartContext);
 return (
   <div className="bg-white">
   <div className="max-w-2xl mx-auto py-14 px-4 sm:px-6 lg:max-w-7xl lg:px-8">

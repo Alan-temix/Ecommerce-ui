@@ -4,7 +4,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline'
 import './Header.style.css';
 import ShoppingCarts from './ShoppingCarts';
-import { getIp } from './Helpers/getIp';
+// import { getIp } from './Helpers/getIp';
 
 // Context
 import CartContext from '../../context/CartContext';
